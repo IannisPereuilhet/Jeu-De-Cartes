@@ -1,0 +1,40 @@
+from utils import *
+from src.attaque import Attaque
+from src.effet import *
+
+def remue_sol():
+    return Attaque(
+        
+        nom="REMUE-SOL",
+
+        effets=[
+            DEGATS_ELEMENT(
+                valeur=30,
+                element=Element.TERRE,
+                cible=TypeCible.UNE_CARTE_ENNEMIE,
+                calcul=TypeCalcul.CLASSIQUE
+            ),
+
+            PV_MAX(
+                valeur=30,
+                element=Element.TERRE,
+                cible=TypeCible.SOI_MEME
+            )   
+        ],
+
+        effets_critiques=None,
+
+        effets_passifs=[
+            ALEATOIRE()
+        ],
+
+        proba_precision=1.0,
+
+        proba_critique=0.01,
+
+        critique=2,
+
+        recharge=2,
+
+        element=Element.TERRE
+    )
