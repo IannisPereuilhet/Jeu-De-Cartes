@@ -1,0 +1,44 @@
+from utils import *
+from src.attaque import Attaque
+from src.effet import *
+
+def flamme_magique():
+    return Attaque(
+    
+        nom="FLAMME MAGIQUE",
+
+        effets=[
+            DEGATS_ELEMENT(
+                valeur=30,
+                element=Element.FEU,
+                cible=TypeCible.UNE_CARTE,
+                calcul=TypeCalcul.CLASSIQUE
+            ), 
+
+            DEGATS_ELEMENT(
+                valeur=30,
+                element=Element.LUMIERE,
+                cible=TypeCible.UNE_CARTE,
+                calcul=TypeCalcul.CLASSIQUE
+            ),
+
+            ETOURDISSEMENT(
+                duree=1,
+                cible=TypeCible.UNE_CARTE
+            )
+        ],
+
+        effets_critiques=None,
+
+        effets_passifs=None,
+
+        proba_precision=1.0,
+
+        proba_critique=0.01,
+
+        critique=2,
+
+        recharge=4,
+
+        element=Element.FEU
+    )
